@@ -32,9 +32,9 @@ if [ $(lsb_release -sr | cut -f 1 -d.) -lt 12 ]; then
   exit 1
 fi
 
-apt_packages="git wget curl build-essential autoconf libpcre3-dev uuid-dev flex bison geoip-database-contrib \
+apt_packages="git wget curl build-essential autoconf libpcre3-dev uuid-dev flex bison geoip-database \
 libpng12-dev libgeoip-dev libglib2.0-dev libffi-dev libmagic-dev python-software-properties python-software-properties \
-libhttp-message-perl libjson-perl libwww-perl"
+libhttp-message-perl libjson-perl libwww-perl libcurl4-openssl-dev"
 
 ## Your version may be different. Look for "Version:" in /var/lib/apt/lists/ppa.launchpad.net_chris-lea_node.js_[...]_Packages (ellipsised part of path varies with setup)
 #sudo apt-get install nodejs=0.10.18-1chl1~precise1
