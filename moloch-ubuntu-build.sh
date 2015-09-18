@@ -128,6 +128,8 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+
+
 # Now build moloch
 cd moloch
 echo "##### updating code from git #####"
@@ -141,3 +143,9 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+
+#update geo-ip
+# geoipasnnum
+cd /usr/share/GeoIP
+wget  http://download.maxmind.com/download/geoip/database/asnum/GeoIPASNum.dat.gz
+gunzip GeoIPASNum.dat.gz
