@@ -1,6 +1,25 @@
 #!/bin/bash
+if [ -z "$1" ]; then
+  echo ""
+  echo "  Please specify the Elasticsearch version you want to install!"
+  echo ""
+  echo "    $ $0 1.7.2"
+  echo ""
+  exit 1
+fi
+ 
+VERSION=$1
+ 
+if [[ ! "${VERSION}" =~ ^[0-9]+\.[0-9]+ ]]; then
+  echo ""
+  echo "  The specified Elasticsearch version isn't valid!"
+  echo ""
+  echo "    $ $0 1.7.2"
+  echo ""
+  exit 2
+fi
 
-VERSION=$(wget -q -O - http://www.elasticsearch.org/download/|sed -n 's/^.*class="version">\([.0-9]*\)<.*$/\1/p')
+#VERSION=$(wget -q -O - http://www.elasticsearch.org/download/|sed -n 's/^.*class="version">\([.0-9]*\)<.*$/\1/p')
 URL=https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-${VERSION}.deb
 DEB=elasticsearch-${VERSION}.deb
 
