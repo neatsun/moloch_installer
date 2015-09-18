@@ -68,3 +68,5 @@ fi
 
 echo "Restarting elastic search with new configuration"
 sudo service elasticsearch restart
+
+echo "make sure you hae permissions to /data/moloch/data/Moloch "
