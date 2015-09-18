@@ -69,4 +69,4 @@ fi
 echo "Restarting elastic search with new configuration"
 sudo service elasticsearch restart
 
-echo "make sure you hae permissions to /data/moloch/data/Moloch "
+echo "make sure you hae permissions to /data/moloch/data/Moloch    it might be under the user root and not underelasticsearch .. u can chmod 777 for testing .. yet this is not secure  /chown"
